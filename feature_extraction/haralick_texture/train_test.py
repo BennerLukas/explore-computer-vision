@@ -7,7 +7,7 @@ import mahotas as mt
 from sklearn.svm import LinearSVC
 
 # load the training dataset
-train_path  = "dataset/train"
+train_path  = r"feature_extraction\haralick_texture\dataset\train"
 train_names = os.listdir(train_path)
 
 def extract_features(image):
@@ -60,7 +60,7 @@ print("[STATUS] Fitting data/label to model..")
 clf_svm.fit(train_features, train_labels)
 
 # loop over the test images
-test_path = "dataset/test"
+test_path = r"feature_extraction\haralick_texture\dataset\test"
 for file in glob.glob(test_path + "/*.jpg"):
 	# read the input image
 	image = cv2.imread(file)
